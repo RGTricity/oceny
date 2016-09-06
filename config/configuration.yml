@@ -1,8 +1,8 @@
 defaults:
-  form_path: '/rails-girls-krakow-2016'
+  form_path: '/rails-girls-tricity-2016'
   registration:
-    from: 06.03.2016
-    to: 04.04.2016
+    from: 06.09.2016
+    to: 22.10.2016
   reviewers:
     - RGTricity
     - szemek
