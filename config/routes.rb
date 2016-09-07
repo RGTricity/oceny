@@ -1,5 +1,5 @@
 Oceny::Application.routes.draw do
-  root 'forms#closed'
+  root 'forms#show'
 
   get '/dashboard' => 'dashboard#index'
 
