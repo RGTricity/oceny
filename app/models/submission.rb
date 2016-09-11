@@ -69,10 +69,10 @@ class Submission
 
   def self.experience_answers
     [
-      'Never heard of it',
-      'Heard of it',
-      'I used it',
-      'I am fluent in it'
+      'Nie znam',
+      'Początkujacy',
+      'Średnio zaawansowany',
+      'Zaawansowany'
     ]
   end
 
