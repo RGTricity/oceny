@@ -11,21 +11,20 @@
     = f.label :codecademy_username, required: true, label: 'nazwa użytkownika codeacademy'
     %div
       %p.hint
-        We would like you to complete
+        Chcielibyśmy, abyś ukończył 
         %strong
-          at least 6 units
-        of
+          co najmniej 6 działów
+      
         = link_to 'Ruby course at CodeCademy', 'https://www.codecademy.com/learn/ruby', target: '_blank'
         = '.'
-        To do it, please register at
+        Aby to zrobić, musisz utworzyć konto na
         = link_to 'CodeCademy', 'https://www.codecademy.com/register?redirect=%2Flearn%2Fruby', target: '_blank'
-        and put your username below, so we can verify your progress.
+        i wpisać swoją nazwe użytkownika poniżej, abyśmy mogli zweryfikować twój postęp.
     = f.text_field :codecademy_username
     = f.error :codecademy_username
     %div
       %p.note
-        Note: You can finish registration now and complete the course later.
-        We will start evalutaing submissions on the
+        Uwaga: Możesz dokonać rejestracji teraz, a skończyć kurs później. Masz czas do 
         %strong
           2nd of April
         = '.'
