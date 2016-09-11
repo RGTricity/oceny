@@ -11,27 +11,27 @@
     = f.label :codecademy_username, required: true, label: 'nazwa użytkownika codeacademy'
     %div
       %p.hint
-        Chcielibyśmy, abyś ukończył 
+        Chcielibyśmy, abyś ukończył/ła 
         %strong
           co najmniej 6 działów
       
         = link_to 'Ruby course at CodeCademy', 'https://www.codecademy.com/learn/ruby', target: '_blank'
         = '.'
-        Aby to zrobić, musisz utworzyć konto na
+        By to zrobić, musisz utworzyć konto na
         = link_to 'CodeCademy', 'https://www.codecademy.com/register?redirect=%2Flearn%2Fruby', target: '_blank'
-        i wpisać swoją nazwe użytkownika poniżej, abyśmy mogli zweryfikować twój postęp.
+        i wpisać swoją nazwe użytkownika poniżej, a my będziemy mogli zweryfikować twój postęp.
     = f.text_field :codecademy_username
     = f.error :codecademy_username
     %div
       %p.note
         Uwaga: Możesz dokonać rejestracji teraz, a skończyć kurs później. Masz czas do 
         %strong
-          2nd of April
+          2 Kwietnia
         = '.'
-  = f.input :about, as: :text, required: true, label: 'Who are you? Tell us a little bit about yourself', input_html: { rows: 2 }
+  = f.input :about, as: :text, required: true, label: 'Kim jesteś? Czym zajmujesz się na co dzień? Powiedz coś o sobie, żebyśmy mogili Cię lepiej poznać? :)', input_html: { rows: 2 }
 
   .input
-    = f.label :experience, required: true
+    = f.label :experience, required: true, label: 'Doświadczenie'
 
     %span.hint Help us to understand how much experience you already have so that we can assign you to the right group, where you can learn the most.
 
@@ -49,11 +49,9 @@
 
     = f.error :experience
 
-  = f.input :english, required: true, as: :radio_buttons, collection: Submission.english_answers, label: 'How fluent are you in English?'
-  = f.input :os, required: true, as: :radio_buttons, collection: Submission.os_answers, label: 'What operating system do you use?'
-  = f.input :been_before, required: true, as: :radio_buttons, label: 'Have you participated in Rails Girls before?'
-  = f.input :reason, as: :text, required: true, label: 'How are you going to use the knowledge acquired during the workshop? What are your goals and expectations?', input_html: { rows: 8 }
-
-  = f.input :extra, as: :text, label: 'Is there anything in particular we should be aware of to make your attendance better/easier?', hint: "E.g. I'm vegan, I'm shortsighted", input_html: { rows: 4 }
+  = f.input :os, required: true, as: :radio_buttons, collection: Submission.os_answers, label: 'Jakiego systemu operacyjnego używasz?'
+  = f.input :been_before, required: true, as: :radio_buttons, label: 'Brałeś już wcześniej udział w spotkaniach Rails Girls?'
+  = f.input :reason, as: :text, required: true, label: 'W jaki sposób masz zamiar wykorzystać wiedzę zdobytą na warsztatach? Jakie są Twoje cele i oczekiwania?', input_html: { rows: 8 }
+  = f.input :extra, as: :text, label: 'Czy jest coś na co w szczególności powinniśmy zwrócić uwagę aby Twój pobyt był przyjemniejszy?', hint: "Np. Jestem wegetarianinem", input_html: { rows: 4 }
 
   = f.submit 'Send'
