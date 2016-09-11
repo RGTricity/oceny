@@ -4,7 +4,7 @@
   = link_to 'railsgirls.com/krakow', 'http://railsgirls.com/krakow', target: '_blank'
 
 = simple_form_for(submission, url: submit_path) do |f|
-  = f.input :fullname, required: true
+  = f.input :fullname, required: true, label: 'Imię i nazwisko'
   = f.input :email, as: :email, required: true
   = f.input :age, as: :integer, required: true, input_html: { min: 0 }
   .input
