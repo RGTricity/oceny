@@ -6,9 +6,9 @@
 = simple_form_for(submission, url: submit_path) do |f|
   = f.input :fullname, required: true, label: 'Imię i nazwisko'
   = f.input :email, as: :email, required: true
-  = f.input :age, as: :integer, required: true, input_html: { min: 0 }
+  = f.input :age, as: :integer, required: true, input_html: { min: 0 }, label: 'Wiek'
   .input
-    = f.label :codecademy_username, required: true
+    = f.label :codecademy_username, required: true, label: 'nazwa użytkownika codeacademy'
     %div
       %p.hint
         We would like you to complete
