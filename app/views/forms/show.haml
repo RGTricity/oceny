@@ -4,9 +4,9 @@
   = link_to 'railsgirls.com/krakow', 'http://railsgirls.com/krakow', target: '_blank'
 
 = simple_form_for(submission, url: submit_path) do |f|
-  = f.input :fullname, required: true
+  = f.input :nazwisko, required: true
   = f.input :email, as: :email, required: true
-  = f.input :age, as: :integer, required: true, input_html: { min: 0 }
+  = f.input :wiek, as: :integer, required: true, input_html: { min: 0 }
   .input
     = f.label :codecademy_username, required: true
     %div
@@ -32,7 +32,7 @@
   = f.input :about, as: :text, required: true, label: 'Who are you? Tell us a little bit about yourself', input_html: { rows: 2 }
 
   .input
-    = f.label :experience, required: true
+    = f.label :doświadczenie, required: true
 
     %span.hint Help us to understand how much experience you already have so that we can assign you to the right group, where you can learn the most.
 
