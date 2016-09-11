@@ -17,6 +17,7 @@ class Submission
   field :extra, type: String
   field :rejected, type: Boolean, default: false
   field :average_rate, type: Float, default: 0.0
+  field :partner,type: String
   enum :codecademy_status, [:unknown, :confirmed, :failed]
 
   validates :fullname, presence: true
@@ -29,6 +30,7 @@ class Submission
   validates :os, presence: { message: 'please select an answer' }
   validates :been_before, presence: { message: 'please select an answer' }
   validates :reason, presence: true
+  validates :partner, presence: false
 
   has_many :rates
   has_many :comments
