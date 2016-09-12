@@ -54,9 +54,9 @@
   = f.input :reason, as: :text, required: true, label: 'W jaki sposób masz zamiar wykorzystać wiedzę zdobytą na warsztatach? Jakie są Twoje cele i oczekiwania?', input_html: { rows: 8 }
   = f.input :extra, as: :text, label: 'Czy chcesz coś dodać?', input_html: { rows: 4 }
   = f.input :partner, as: :text, label: 'Czy wybierasz się na warsztaty z chłopakiem / dziewczyną? Jeśli tak, wpisz poniżej imię i nazwisko osoby towarzyszącej.', input_html: { rows: 1 }
-  = f.input :rules, as: :radio_buttons, required: true, label: 'Zaznacz checkbox aby zaakceptować regulamin'
   %div
-    %p.note
+    %p.hint
       Druga osoba także musi indywidualnie wypełnić formularz rejestracyjny.
+  = f.input :rules, as: :radio_buttons, required: true, label: 'Zaznacz checkbox aby zaakceptować regulamin'
 
   = f.submit 'Wyślij'
