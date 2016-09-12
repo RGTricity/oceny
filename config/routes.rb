@@ -2,6 +2,7 @@ Oceny::Application.routes.draw do
   root 'forms#show'
 
   get '/dashboard' => 'dashboard#index'
+  get '/rules' => 'rules#show'
 
   namespace :api do
     resources :submissions, only: [:index, :show] do
