@@ -1,0 +1,26 @@
+pl:
+  mongoid:
+    errors:
+      models:
+        submission:
+          attributes:
+            fullname:
+              blank: 'Podaj imię i nazwisko'
+            email:
+              blank: 'Podaj swój adres email'
+            adult:
+              blank: 'Zaznacz "Tak" lub "Nie"'
+            codecademy_username:
+              blank: 'Podaj nazwę użytkownika'
+            about:
+              blank: 'Napisz coś o sobie'
+            experience:
+              blank: 'Określ swoje doświadczenie'
+            os:
+              blank: 'Wybierz swój system operacyjny'
+            been_before:
+              blank: 'Zaznacz "Tak" lub "Nie"'
+            reason:
+              blank: 'Napisz dlaczego chcesz uczestniczyć w warsztatach'
+            accepts_rules:
+              blank: 'Aby zarejestrować się na warsztaty zaakceptuj regulamin'
