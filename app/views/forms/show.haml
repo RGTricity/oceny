@@ -1,7 +1,8 @@
 %header
-  %h1 Rails Girls Kraków
-  %p.date 15-16 April 2016
-  = link_to 'railsgirls.com/krakow', 'http://railsgirls.com/krakow', target: '_blank'
+  %h1 Rails Girls Tricity
+  %p.date
+    22-23<br> października<br> 2016
+  = link_to 'http://railsgirlstricity.pl', 'http://railsgirlstricity.pl', target: '_blank'
 
 = simple_form_for(submission, url: submit_path) do |f|
   = f.input :fullname, required: true, label: 'Imię i nazwisko'
@@ -11,10 +12,10 @@
     = f.label :codecademy_username, required: true, label: '*Niepotrzebne pytanie - usunąć. nazwa użytkownika codeacademy'
     %div
       %p.hint
-        Chcielibyśmy, abyś ukończył/ła 
+        Chcielibyśmy, abyś ukończył/ła
         %strong
           co najmniej 6 działów
-      
+
         = link_to 'Ruby course at CodeCademy', 'https://www.codecademy.com/learn/ruby', target: '_blank'
         = '.'
         By to zrobić, musisz utworzyć konto na
@@ -24,7 +25,7 @@
     = f.error :codecademy_username
     %div
       %p.note
-        Info: Możesz dokonać rejestracji teraz, a skończyć kurs później. Masz czas do 
+        Info: Możesz dokonać rejestracji teraz, a skończyć kurs później. Masz czas do
         %strong
           2 Kwietnia
         = '.'

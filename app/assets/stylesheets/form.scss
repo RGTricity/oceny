@@ -61,12 +61,15 @@ header {
 
   .date {
     font-size: 1.2rem;
+    text-align: right;
+    line-height: 1.2;
+    margin-top: 20px;
   }
 
   @media (min-width: 1024px) {
     position: relative;
     height: 500px;
-    background: url(/assets/rails-girls-krakow-2016.png) center top no-repeat;
+    background: url(/assets/logo.png) center top no-repeat;
     background-size: auto 100%;
     padding-top: 1rem;
     margin-top: 1rem;
