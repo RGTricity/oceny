@@ -13,9 +13,8 @@ class FormsController < ApplicationController
 
   def submit
     submission = Submission.new(submission_params)
-    submission_creator = SubmissionCreator.new(submission)
 
-    if submission_creator.call
+    if submission.save
       Mailing.after_submission(submission.id.to_s).deliver_later
       redirect_to(thanks_path)
     else
@@ -41,7 +40,7 @@ class FormsController < ApplicationController
 
   def submission_params
     params.require(:submission).permit(:fullname, :email, :age, :codecademy_username, :about, :os,
-      :been_before, :reason, :english, :extra, :experience => [:html, :css, :js,
+      :been_before, :reason, :english, :extra, :partner, :adult, :accepts_rules, :experience => [:html, :css, :js,
       :databases, :rails, :programming])
   end
 

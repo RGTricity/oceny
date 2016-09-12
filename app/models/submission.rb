@@ -6,11 +6,10 @@ class Submission
 
   field :fullname, type: String
   field :email, type: String
-  field :age, type: Integer
+  field :adult, type: Boolean
   field :codecademy_username, type: String
   field :about, type: String
   field :experience, type: Hash
-  field :english, type: String
   field :os, type: String
   field :been_before, type: Boolean
   field :reason, type: String
@@ -18,21 +17,20 @@ class Submission
   field :rejected, type: Boolean, default: false
   field :average_rate, type: Float, default: 0.0
   field :partner,type: String
-  field :rules, type: Boolean
+  field :accepts_rules, type: Boolean
   enum :codecademy_status, [:unknown, :confirmed, :failed]
 
   validates :fullname, presence: true
   validates :email, presence: true, uniqueness: true
   validates :codecademy_username, presence: true
-  validates :age, presence: true
+  validates :adult, presence: true
   validates :about, presence: true
-  validates :experience, presence: { message: 'please select answers for all technologies' }
-  validates :english, presence: { message: 'please select an answer' }
-  validates :os, presence: { message: 'please select an answer' }
-  validates :been_before, presence: { message: 'please select an answer' }
+  validates :experience, presence: true
+  validates :os, presence: true
+  validates :been_before, presence: true
   validates :reason, presence: true
   validates :partner, presence: false
-  validates :rules, presence: true
+  validates :accepts_rules, presence: true
 
   has_many :rates
   has_many :comments
@@ -61,7 +59,7 @@ class Submission
       html: 'HTML',
       css: 'CSS',
       js: 'Javascript',
-      databases: 'Databases',
+      databases: 'Bazy danych',
       rails: 'Ruby on Rails',
       programming: 'Inny język programowania (PHP, C++, etc.)'
     }
