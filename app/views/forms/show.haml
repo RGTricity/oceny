@@ -6,9 +6,9 @@
 = simple_form_for(submission, url: submit_path) do |f|
   = f.input :fullname, required: true, label: 'Imię i nazwisko'
   = f.input :email, as: :email, required: true
-  = f.input :age, as: :integer, required: true, input_html: { min: 0 }, label: 'Wiek'
+  = f.input :age, as: :integer, required: true, input_html: { min: 0 }, label: 'Mam ukończone 18 lat. *Dodać checkbox TAK / NIE '
   .input
-    = f.label :codecademy_username, required: true, label: 'nazwa użytkownika codeacademy'
+    = f.label :codecademy_username, required: true, label: '*Niepotrzebne pytanie - usunąć. nazwa użytkownika codeacademy'
     %div
       %p.hint
         Chcielibyśmy, abyś ukończył/ła 
@@ -24,7 +24,7 @@
     = f.error :codecademy_username
     %div
       %p.note
-        Uwaga: Możesz dokonać rejestracji teraz, a skończyć kurs później. Masz czas do 
+        Info: Możesz dokonać rejestracji teraz, a skończyć kurs później. Masz czas do 
         %strong
           2 Kwietnia
         = '.'
@@ -33,7 +33,7 @@
   .input
     = f.label :experience, required: true, label: 'Doświadczenie'
 
-    %span.hint Help us to understand how much experience you already have so that we can assign you to the right group, where you can learn the most.
+    %span.hint Oceń jakie masz aktualne doświadczenie, abyśmy mogli przypisać Cię do grupy o odpowiednim poziomie zaawansowania, gdzie nauczysz się najwięcej.
 
     %table
       %tr
@@ -50,10 +50,13 @@
     = f.error :experience
 
   = f.input :os, required: true, as: :radio_buttons, collection: Submission.os_answers, label: 'Jakiego systemu operacyjnego używasz?'
-  = f.input :been_before, required: true, as: :radio_buttons, label: 'Brałeś już wcześniej udział w spotkaniach Rails Girls?'
+  = f.input :been_before, required: true, as: :radio_buttons, label: 'Czy brałaś/łeś wcześniej udział w 2dniowych warsztatach Rails Girls?'
   = f.input :reason, as: :text, required: true, label: 'W jaki sposób masz zamiar wykorzystać wiedzę zdobytą na warsztatach? Jakie są Twoje cele i oczekiwania?', input_html: { rows: 8 }
-  = f.input :extra, as: :text, label: 'Czy jest coś na co w szczególności powinniśmy zwrócić uwagę aby Twój pobyt był przyjemniejszy?', hint: "Np. Jestem wegetarianinem", input_html: { rows: 4 }
-  = f.input :partner, as: :text, label: 'Czy wybierasz się na warsztaty z chłopakiem/dziewczyną? Jeśli tak, wpisz poniżej imię i nazwisko osoby towarzyszącej.', input_html: { rows: 1 }
+  = f.input :extra, as: :text, label: 'Czy chcesz coś dodać?', input_html: { rows: 4 }
+  = f.input :partner, as: :text, label: 'Czy wybierasz się na warsztaty z chłopakiem / dziewczyną? Jeśli tak, wpisz poniżej imię i nazwisko osoby towarzyszącej.', input_html: { rows: 1 }
+  %div
+    %p.note
+        Druga osoba także musi indywidualnie wypełnić formularz rejestracyjny.
   = f.input :rules, as: :radio_buttons, required: true, label: 'Zaznacz checkbox aby zaakceptować regulamin'
 
   = f.submit 'Wyślij'
