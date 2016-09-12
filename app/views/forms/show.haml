@@ -51,7 +51,7 @@
     = f.error :experience
 
   = f.input :os, required: true, as: :radio_buttons, collection: Submission.os_answers, label: 'Jakiego systemu operacyjnego używasz?'
-  = f.input :been_before, required: true, as: :radio_buttons, label: 'Czy brałaś/łeś wcześniej udział w 2dniowych warsztatach Rails Girls?'
+  = f.input :been_before, required: true, as: :radio_buttons, label: 'Czy brałaś/łeś wcześniej udział w warsztatach Rails Girls?'
   = f.input :reason, as: :text, required: true, label: 'W jaki sposób masz zamiar wykorzystać wiedzę zdobytą na warsztatach? Jakie są Twoje cele i oczekiwania?', input_html: { rows: 8 }
   = f.input :extra, as: :text, label: 'Czy chcesz coś dodać?', input_html: { rows: 4 }
   = f.input :partner, as: :text, label: 'Czy wybierasz się na warsztaty z chłopakiem / dziewczyną? Jeśli tak, wpisz poniżej imię i nazwisko osoby towarzyszącej.', input_html: { rows: 1 }
