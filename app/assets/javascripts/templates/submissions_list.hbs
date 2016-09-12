@@ -1,6 +1,6 @@
 <div class='submission-header'>
   <span>Imię</span>
-  <span>Wiek</span>
+  <span>Osoba pełnoletnia</span>
   <span>Średnia ocena</span>
   <span>Ilość ocen</span>
   <span>Data rejestracji</span>
@@ -9,7 +9,7 @@
   {{#each model.submissions as |submission|}}
     <li>
       <span>{{SubmissionLink submission}}</span>
-      <span>{{submission.age}}</span>
+      <span>{{submission.adult}}</span>
       <span>{{submission.average_rate}}</span>
       <span>{{submission.rates_count}}</span>
       <span>{{FormattedDate submission.created_at}}</span>
