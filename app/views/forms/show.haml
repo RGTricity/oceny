@@ -58,6 +58,6 @@
   %div
     %p.hint
       Druga osoba także musi indywidualnie wypełnić formularz rejestracyjny.
-  = f.input :rules, as: :radio_buttons, required: true, label: 'Zaznacz checkbox aby zaakceptować regulamin'
+  = f.input :rules, as: :radio_buttons, required: true, label: "Zaznacz checkbox aby zaakceptować #{link_to 'Regulamin', rules_path, target: '_blank'}".html_safe
 
   = f.submit 'Wyślij'
