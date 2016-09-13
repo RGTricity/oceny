@@ -39,7 +39,7 @@ class FormsController < ApplicationController
   end
 
   def submission_params
-    params.require(:submission).permit(:fullname, :email, :age, :codecademy_username, :about, :os,
+    params.require(:submission).permit(:fullname, :email, :age, :about, :os,
       :been_before, :reason, :english, :extra, :partner, :adult, :accepts_rules, :experience => [:html, :css, :js,
       :databases, :rails, :programming])
   end

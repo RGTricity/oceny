@@ -8,27 +8,6 @@
   = f.input :fullname, required: true, label: 'Imię i nazwisko'
   = f.input :email, as: :email, required: true
   = f.input :adult, as: :radio_buttons, required: true, label: 'Czy masz ukończone 18 lat?'
-  .input
-    = f.label :codecademy_username, required: true, label: '*Niepotrzebne pytanie - usunąć. nazwa użytkownika codeacademy'
-    %div
-      %p.hint
-        Chcielibyśmy, abyś ukończył/ła
-        %strong
-          co najmniej 6 działów
-
-        = link_to 'Ruby course at CodeCademy', 'https://www.codecademy.com/learn/ruby', target: '_blank'
-        = '.'
-        By to zrobić, musisz utworzyć konto na
-        = link_to 'CodeCademy', 'https://www.codecademy.com/register?redirect=%2Flearn%2Fruby', target: '_blank'
-        i wpisać swoją nazwe użytkownika poniżej, a my będziemy mogli zweryfikować twój postęp.
-    = f.text_field :codecademy_username
-    = f.error :codecademy_username
-    %div
-      %p.note
-        Info: Możesz dokonać rejestracji teraz, a skończyć kurs później. Masz czas do
-        %strong
-          2 Kwietnia
-        = '.'
   = f.input :about, as: :text, required: true, label: 'Kim jesteś? Czym zajmujesz się na co dzień? Powiedz coś o sobie, żebyśmy mogili Cię lepiej poznać? :)', input_html: { rows: 2 }
 
   .input

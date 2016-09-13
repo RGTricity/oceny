@@ -7,7 +7,6 @@ class Submission
   field :fullname, type: String
   field :email, type: String
   field :adult, type: Boolean
-  field :codecademy_username, type: String
   field :about, type: String
   field :experience, type: Hash
   field :os, type: String
@@ -18,11 +17,9 @@ class Submission
   field :average_rate, type: Float, default: 0.0
   field :partner,type: String
   field :accepts_rules, type: Boolean
-  enum :codecademy_status, [:unknown, :confirmed, :failed]
 
   validates :fullname, presence: true
   validates :email, presence: true, uniqueness: true
-  validates :codecademy_username, presence: true
   validates :adult, presence: true
   validates :about, presence: true
   validates :experience, presence: true

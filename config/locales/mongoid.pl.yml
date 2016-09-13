@@ -11,8 +11,6 @@ pl:
               taken: 'Zgłoszenie z podanym adresem email już zostało wysłane'
             adult:
               blank: 'Zaznacz "Tak" lub "Nie"'
-            codecademy_username:
-              blank: 'Podaj nazwę użytkownika'
             about:
               blank: 'Napisz coś o sobie'
             experience:

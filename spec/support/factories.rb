@@ -5,7 +5,6 @@ FactoryGirl.define do
     age { 21 }
     about { "About" }
     experience { default_experience }
-    codecademy_username 'user'
     os { Submission.os_answers.last }
     english { Submission.english_answers.last }
     reason { "Good reason" }
