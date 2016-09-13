@@ -20,7 +20,7 @@ class Submission
   field :partner,type: String
   field :accepts_rules, type: Boolean
   field :information_source, type: String
-  field :meal_preference, type: String
+  field :meal_preferences, type: String
   field :accepts_using_personal_data, type: Boolean
 
   validates :fullname, presence: true
@@ -35,7 +35,7 @@ class Submission
   validates :reason, presence: true
   validates :partner, presence: false
   validates :information_source, presence: true
-  validates :meal_preference, presence: true
+  validates :meal_preferences, presence: true
   validates :accepts_rules, presence: true, acceptance: true
   validates :accepts_using_personal_data, presence: true, acceptance: true
 
@@ -94,24 +94,6 @@ class Submission
       'Mac OS X',
       'Windows',
       'Linux'
-    ]
-  end
-
-  def self.information_sources
-    [
-      'Facebook',
-      'Twitter',
-      'Od koleżanki/kolegi',
-      'Inne'
-    ]
-  end
-
-  def self.meal_preferences
-    [
-      'Neutralne',
-      'Wege',
-      'Wegan',
-      'Dieta bezglutenowa'
     ]
   end
 

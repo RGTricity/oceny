@@ -27,7 +27,7 @@ pl:
               blank: 'Podaj numer telefonu'
             information_source:
               blank: 'Podaj źródło, z którego dowiedziałaś/eś się o Rails Girls'
-            meal_preference:
+            meal_preferences:
               blank: 'Podaj swoje preferencje żywieniowe'
             accepts_rules:
               blank: 'Aby wysłać zgłoszenie na warsztaty zaakceptuj regulamin'
