@@ -8,6 +8,7 @@ pl:
               blank: 'Podaj imię i nazwisko'
             email:
               blank: 'Podaj swój adres email'
+              taken: 'Zgłoszenie z podanym adresem email już zostało wysłane'
             adult:
               blank: 'Zaznacz "Tak" lub "Nie"'
             codecademy_username:
@@ -23,4 +24,4 @@ pl:
             reason:
               blank: 'Napisz dlaczego chcesz uczestniczyć w warsztatach'
             accepts_rules:
-              blank: 'Aby zarejestrować się na warsztaty zaakceptuj regulamin'
+              blank: 'Aby wysłać zgłoszenie na warsztaty zaakceptuj regulamin'
