@@ -98,8 +98,12 @@ header {
   max-width: 100%;
   margin-bottom: 1rem;
   font-weight: bold;
-  text-transform: uppercase;
   color: $rg-navy;
+
+  &.checkbox {
+    display: block;
+    font-weight: normal;
+  }
 }
 
 abbr {

@@ -21,5 +21,17 @@ pl:
               blank: 'Zaznacz "Tak" lub "Nie"'
             reason:
               blank: 'Napisz dlaczego chcesz uczestniczyć w warsztatach'
+            city:
+              blank: 'Podaj miasto'
+            phone:
+              blank: 'Podaj numer telefonu'
+            information_source:
+              blank: 'Podaj źródło, z którego dowiedziałaś/eś się o Rails Girls'
+            meal_preference:
+              blank: 'Podaj swoje preferencje żywieniowe'
             accepts_rules:
               blank: 'Aby wysłać zgłoszenie na warsztaty zaakceptuj regulamin'
+              accepted: 'Aby wysłać zgłoszenie na warsztaty zaakceptuj regulamin'
+            accepts_using_personal_data:
+              blank: 'Aby wysłać zgłoszenie na warsztaty wyraź zgodę'
+              accepted: 'Aby wysłać zgłoszenie na warsztaty wyraź zgodę'

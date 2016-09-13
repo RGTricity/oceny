@@ -5,6 +5,8 @@ class Submission
   include Mongoid::Enum
 
   field :fullname, type: String
+  field :city, type: String
+  field :phone, type: String
   field :email, type: String
   field :adult, type: Boolean
   field :about, type: String
@@ -17,8 +19,13 @@ class Submission
   field :average_rate, type: Float, default: 0.0
   field :partner,type: String
   field :accepts_rules, type: Boolean
+  field :information_source, type: String
+  field :meal_preference, type: String
+  field :accepts_using_personal_data, type: Boolean
 
   validates :fullname, presence: true
+  validates :city, presence: true
+  validates :phone, presence: true
   validates :email, presence: true, uniqueness: true
   validates :adult, presence: true
   validates :about, presence: true
@@ -27,7 +34,10 @@ class Submission
   validates :been_before, presence: true
   validates :reason, presence: true
   validates :partner, presence: false
-  validates :accepts_rules, presence: true
+  validates :information_source, presence: true
+  validates :meal_preference, presence: true
+  validates :accepts_rules, presence: true, acceptance: true
+  validates :accepts_using_personal_data, presence: true, acceptance: true
 
   has_many :rates
   has_many :comments
@@ -84,6 +94,24 @@ class Submission
       'Mac OS X',
       'Windows',
       'Linux'
+    ]
+  end
+
+  def self.information_sources
+    [
+      'Facebook',
+      'Twitter',
+      'Od koleżanki/kolegi',
+      'Inne'
+    ]
+  end
+
+  def self.meal_preferences
+    [
+      'Neutralne',
+      'Wege',
+      'Wegan',
+      'Dieta bezglutenowa'
     ]
   end
 

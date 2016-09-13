@@ -6,8 +6,15 @@
 
 = simple_form_for(submission, url: submit_path) do |f|
   = f.input :fullname, required: true, label: 'Imię i nazwisko'
+
+  = f.input :city, required: true, label: 'Miasto'
+
   = f.input :email, as: :email, required: true
-  = f.input :adult, as: :radio_buttons, required: true, label: 'Czy masz ukończone 18 lat?'
+
+  = f.input :phone, as: :text, required: true, label: 'Telefon kontaktowy'
+
+  = f.input :adult, as: :radio_buttons, required: true, label: 'Mam ukończone 18 lat'
+
   = f.input :about, as: :text, required: true, label: 'Kim jesteś? Czym zajmujesz się na co dzień? Powiedz coś o sobie, żebyśmy mogili Cię lepiej poznać? :)', input_html: { rows: 2 }
 
   .input
@@ -30,13 +37,68 @@
     = f.error :experience
 
   = f.input :os, required: true, as: :radio_buttons, collection: Submission.os_answers, label: 'Jakiego systemu operacyjnego używasz?'
-  = f.input :been_before, required: true, as: :radio_buttons, label: 'Czy brałaś/łeś wcześniej udział w warsztatach Rails Girls?'
+
+  = f.input :been_before, required: true, as: :radio_buttons, label: 'Czy brałaś/łeś wcześniej udział w 2dniowych warsztatach Rails Girls?'
+
   = f.input :reason, as: :text, required: true, label: 'W jaki sposób masz zamiar wykorzystać wiedzę zdobytą na warsztatach? Jakie są Twoje cele i oczekiwania?', input_html: { rows: 8 }
+
   = f.input :extra, as: :text, label: 'Czy chcesz coś dodać?', input_html: { rows: 4 }
+
   = f.input :partner, as: :text, label: 'Czy wybierasz się na warsztaty z chłopakiem / dziewczyną? Jeśli tak, wpisz poniżej imię i nazwisko osoby towarzyszącej.', input_html: { rows: 1 }
   %div
     %p.hint
       Druga osoba także musi indywidualnie wypełnić formularz rejestracyjny.
-  = f.input :accepts_rules, as: :radio_buttons, required: true, label: "Czy akceptujesz #{link_to 'Regulamin', rules_path, target: '_blank'}?".html_safe
+
+  .input.radio_buttons.required.submission_information_source
+    %label.radio_buttons.required
+      Skąd dowiedziałaś/łeś się o Rails Girls?
+      %abbr{:title => "wymagane"} *
+    %span.radio
+      %label{for: 'submission_information_source_facebook'}
+        %input#submission_information_source_facebook.radio_buttons.required{name: 'submission[information_source]', type: 'radio', value: 'Facebook'}>/
+        Facebook
+    %span.radio
+      %label{for: 'submission_information_source_twitter'}
+        %input#submission_information_source_twitter.radio_buttons.required{name: 'submission[information_source]', type: 'radio', value: 'Twitter'}>/
+        Twitter
+    %span.radio
+      %label{for: 'submission_information_source_friend'}
+        %input#submission_information_source_friend.radio_buttons.required{name: 'submission[information_source]', type: 'radio', value: 'Od koleżanki/kolegi'}>/
+        Od koleżanki/kolegi
+    %span.radio
+      %label{for: "submission_information_source_other"}
+        %input#submission_information_source_other.radio_buttons.required{name: "submission[information_source]", type: "radio", value: "Inne"}>/
+        Inne
+        %input{name: 'submission[custom_information_source]', type: 'text'}
+
+  .input.radio_buttons.required.submission_meal_preference
+    %label.radio_buttons.required
+      Jakie są Twoje preferencje żywieniowe?
+      %abbr{:title => "wymagane"} *
+    %span.radio
+      %label{for: 'submission_meal_preference_neutral'}
+        %input#submission_meal_preference_neutral.radio_buttons.required{name: 'submission[meal_preference]', type: 'radio', value: 'Neutralne'}>/
+        Neutralne
+    %span.radio
+      %label{for: 'submission_meal_preference_vege'}
+        %input#submission_meal_preference_vege.radio_buttons.required{name: 'submission[meal_preference]', type: 'radio', value: 'Wege'}>/
+        Wege
+    %span.radio
+      %label{for: 'submission_meal_preference_vegan'}
+        %input#submission_meal_preference_vegan.radio_buttons.required{name: 'submission[meal_preference]', type: 'radio', value: 'Wegan'}>/
+        Wegan
+    %span.radio
+      %label{for: 'submission_meal_preference_gluten_free'}
+        %input#submission_meal_preference_gluten_free.radio_buttons.required{name: 'submission[meal_preference]', type: 'radio', value: 'Dieta bezglutenowa'}>/
+        Dieta bezglutenowa
+    %span.radio
+      %label{for: 'submission_meal_preference_other'}
+        %input#submission_meal_preference_other.radio_buttons.required{name: 'submission[meal_preference]', type: 'radio', value: 'Inne'}>/
+        Inne
+        %input{name: 'submission[custom_meal_preference]', type: 'text'}
+
+  = f.input :accepts_using_personal_data, as: :boolean, required: true, label: 'Czy wyrażasz zgodę na przechowywanie, wykorzystywanie i przetwarzanie przez Rails Girls Tricity Twoich danych osobowych w celach informacyjnych, zgodnie z ustawą z dnia 29. sierpnia 1997 r. o ochronie danych osobowych (Dz. U. nr 133, poz. 833)?', inline_label: 'Tak, wyrażam zgodę'
+
+  = f.input :accepts_rules, as: :boolean, required: true, label: "Czy akceptujesz #{link_to 'Regulamin', rules_path, target: '_blank'} warsztatów Rails Girls Tricity?".html_safe, inline_label: 'Zapoznałam/em się z treścią Regulaminu.'
 
   = f.submit 'Wyślij'
