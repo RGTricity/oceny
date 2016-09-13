@@ -31,11 +31,6 @@ gem 'omniauth-github'
 gem 'a9n'
 gem 'dotenv-rails'
 
-group :development do
-  gem 'letter_opener'
-  gem 'meta_request'
-end
-
 group :development, :test do
   gem 'awesome_print'
   gem 'better_errors'
