@@ -18,10 +18,8 @@ class Submission
   field :rejected, type: Boolean, default: false
   field :average_rate, type: Float, default: 0.0
   field :partner,type: String
-  field :accepts_rules, type: Boolean
   field :information_source, type: String
   field :meal_preferences, type: String
-  field :accepts_using_personal_data, type: Boolean
 
   validates :fullname, presence: true
   validates :city, presence: true
@@ -36,6 +34,7 @@ class Submission
   validates :partner, presence: false
   validates :information_source, presence: true
   validates :meal_preferences, presence: true
+
   validates :accepts_rules, presence: true, acceptance: true
   validates :accepts_using_personal_data, presence: true, acceptance: true
 
