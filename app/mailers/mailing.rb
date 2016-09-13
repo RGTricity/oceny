@@ -1,5 +1,5 @@
 class Mailing < ActionMailer::Base
-  default from: 'railsgirlskrakow@gmail.com'
+  default from: 'team@railsgirlstricity.pl'
 
   def after_submission(id)
     submission = Submission.find(id)
