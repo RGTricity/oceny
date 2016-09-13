@@ -1,0 +1,19 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=latin,latin-ext);
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, p {
+  margin: 0;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  padding: 0 5% 5%;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
