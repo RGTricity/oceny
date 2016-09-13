@@ -11,7 +11,7 @@
 
   = f.input :email, as: :email, required: true
 
-  = f.input :phone, as: :text, required: true, label: 'Telefon kontaktowy'
+  = f.input :phone, as: :text, required: true, label: 'Telefon kontaktowy', input_html: { rows: 1 }
 
   = f.input :adult, as: :radio_buttons, required: true, label: 'Mam ukończone 18 lat'
 
@@ -71,6 +71,8 @@
         Inne
         %input{name: 'submission[custom_information_source]', type: 'text'}
 
+    = f.error :information_source
+
   .input.radio_buttons.required.submission_meal_preferences
     %label.radio_buttons.required
       Jakie są Twoje preferencje żywieniowe?
@@ -96,6 +98,7 @@
         %input#submission_meal_preferences_other.radio_buttons.required{name: 'submission[meal_preferences]', type: 'radio', value: 'Inne'}>/
         Inne
         %input{name: 'submission[custom_meal_preferences]', type: 'text'}
+    = f.error :meal_preferences
 
   = f.input :accepts_using_personal_data, as: :boolean, required: true, label: 'Czy wyrażasz zgodę na przechowywanie, wykorzystywanie i przetwarzanie przez Rails Girls Tricity Twoich danych osobowych w celach informacyjnych, zgodnie z ustawą z dnia 29. sierpnia 1997 r. o ochronie danych osobowych (Dz. U. nr 133, poz. 833)?', inline_label: 'Tak, wyrażam zgodę'
 

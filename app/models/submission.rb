@@ -19,7 +19,9 @@ class Submission
   field :average_rate, type: Float, default: 0.0
   field :partner,type: String
   field :information_source, type: String
+  field :custom_information_source, type: String
   field :meal_preferences, type: String
+  field :custom_meal_preferences, type: String
 
   validates :fullname, presence: true
   validates :city, presence: true
