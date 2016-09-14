@@ -2,8 +2,8 @@ class SubmissionSingleSerializer < SubmissionEachSerializer
   self.root = false
 
   attributes :about, :experience, :os, :been_before, :reason, :extra, :partner,
-             :displayed_position, :status
-
+             :displayed_position, :status, :city, :phone, :information_source,
+             :custom_information_source, :meal_preferences, :custom_meal_preferences
   has_many :rates
   has_many :comments
 

@@ -8,11 +8,11 @@ class Submission
   field :city, type: String
   field :phone, type: String
   field :email, type: String
-  field :adult, type: Boolean
+  field :adult, type: String
   field :about, type: String
   field :experience, type: Hash
   field :os, type: String
-  field :been_before, type: Boolean
+  field :been_before, type: String
   field :reason, type: String
   field :extra, type: String
   field :rejected, type: Boolean, default: false

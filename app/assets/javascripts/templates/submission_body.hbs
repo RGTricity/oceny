@@ -9,15 +9,23 @@
     <td>{{FormattedDate model.created_at}}</td>
   </tr>
   <tr>
+    <th>Miasto</th>
+    <td>{{model.city}}</td>
+  </tr>
+  <tr>
     <th>Email</th>
     <td>{{model.email}}</td>
   </tr>
   <tr>
-    <th>Osoba pełnoletnia</th>
+    <th>Telefon</th>
+    <td>{{model.phone}}</td>
+  </tr>
+  <tr>
+    <th>Ukończone 18 lat</th>
     <td>{{model.adult}}</td>
   </tr>
   <tr>
-    <th>O sobie</th>
+    <th>Kim jesteś? Czym zajmujesz się na co dzień? Powiedz coś o sobie, żebyśmy mogili Cię lepiej poznać? :)</th>
     <td>{{model.about}}</td>
   </tr>
   <tr>
@@ -52,11 +60,11 @@
     </td>
   </tr>
   <tr>
-    <th>System operacyjny</th>
+    <th>Jakiego systemu operacyjnego używasz?</th>
     <td>{{model.os}}</td>
   </tr>
   <tr>
-    <th>Czy brałaś/łeś wcześniej udział w warsztatach Rails Girls?</th>
+    <th>Czy brałaś/łeś wcześniej udział w 2dniowych warsztatach Rails Girls?</th>
     <td>{{model.been_before}}</td>
   </tr>
   <tr>
@@ -64,16 +72,30 @@
     <td>{{model.reason}}</td>
   </tr>
   <tr>
-    <th>Dodatkowe informacje</th>
+    <th>Czy chcesz coś dodać?</th>
     <td>{{model.extra}}</td>
   </tr>
   <tr>
-    <th>Osoba towarzysząca</th>
+    <th>Czy wybierasz się na warsztaty z chłopakiem / dziewczyną? Jeśli tak, wpisz poniżej imię i nazwisko osoby towarzyszącej.</th>
     <td>{{model.partner}}</td>
   </tr>
   <tr>
-    <th>Id</th>
-    <td>{{model.id}}</td>
+    <th>Skąd dowiedziałaś/łeś się o Rails Girls?</th>
+    <td>
+      {{model.information_source}}
+      {{#if model.custom_information_source}}
+        : {{model.custom_information_source}}
+      {{/if}}
+    </td>
+  </tr>
+  <tr>
+    <th>Jakie są Twoje preferencje żywieniowe?</th>
+    <td>
+      {{model.meal_preferences}}
+      {{#if model.custom_meal_preferences}}
+        : {{model.custom_meal_preferences}}
+      {{/if}}
+    </td>
   </tr>
 </table>
 <br/>

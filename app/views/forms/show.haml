@@ -13,7 +13,7 @@
 
   = f.input :phone, as: :text, required: true, label: 'Telefon kontaktowy', input_html: { rows: 1 }
 
-  = f.input :adult, as: :radio_buttons, required: true, label: 'Mam ukończone 18 lat'
+  = f.input :adult, as: :radio_buttons, collection: ['Tak', 'Nie'], required: true, label: 'Mam ukończone 18 lat'
 
   = f.input :about, as: :text, required: true, label: 'Kim jesteś? Czym zajmujesz się na co dzień? Powiedz coś o sobie, żebyśmy mogili Cię lepiej poznać? :)', input_html: { rows: 2 }
 
@@ -38,7 +38,7 @@
 
   = f.input :os, required: true, as: :radio_buttons, collection: Submission.os_answers, label: 'Jakiego systemu operacyjnego używasz?'
 
-  = f.input :been_before, required: true, as: :radio_buttons, label: 'Czy brałaś/łeś wcześniej udział w 2dniowych warsztatach Rails Girls?'
+  = f.input :been_before, required: true, as: :radio_buttons, collection: ['Tak', 'Nie'], label: 'Czy brałaś/łeś wcześniej udział w 2dniowych warsztatach Rails Girls?'
 
   = f.input :reason, as: :text, required: true, label: 'W jaki sposób masz zamiar wykorzystać wiedzę zdobytą na warsztatach? Jakie są Twoje cele i oczekiwania?', input_html: { rows: 8 }
 
