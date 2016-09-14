@@ -52,22 +52,22 @@
   .input.radio_buttons.required.submission_information_source
     %label.radio_buttons.required
       Skąd dowiedziałaś/łeś się o Rails Girls?
-      %abbr{:title => "wymagane"} *
+      %abbr{title: 'wymagane'} *
     %span.radio
       %label{for: 'submission_information_source_facebook'}
-        %input#submission_information_source_facebook.radio_buttons.required{name: 'submission[information_source]', type: 'radio', value: 'Facebook'}>/
+        = f.radio_button(:information_source, 'Facebook', id: 'submission_information_source_facebook')
         Facebook
     %span.radio
       %label{for: 'submission_information_source_twitter'}
-        %input#submission_information_source_twitter.radio_buttons.required{name: 'submission[information_source]', type: 'radio', value: 'Twitter'}>/
+        = f.radio_button(:information_source, 'Twitter')
         Twitter
     %span.radio
       %label{for: 'submission_information_source_friend'}
-        %input#submission_information_source_friend.radio_buttons.required{name: 'submission[information_source]', type: 'radio', value: 'Od koleżanki/kolegi'}>/
+        = f.radio_button(:information_source, 'Od koleżanki/kolegi', id: 'submission_information_source_friend')
         Od koleżanki/kolegi
     %span.radio
-      %label{for: "submission_information_source_other"}
-        %input#submission_information_source_other.radio_buttons.required{name: "submission[information_source]", type: "radio", value: "Inne"}>/
+      %label{for: 'submission_information_source_other'}
+        = f.radio_button(:information_source, 'Inne', id: 'submission_information_source_other')
         Inne
         %input{name: 'submission[custom_information_source]', type: 'text'}
 
@@ -76,26 +76,26 @@
   .input.radio_buttons.required.submission_meal_preferences
     %label.radio_buttons.required
       Jakie są Twoje preferencje żywieniowe?
-      %abbr{:title => "wymagane"} *
+      %abbr{title: 'wymagane'} *
     %span.radio
       %label{for: 'submission_meal_preferences_neutral'}
-        %input#submission_meal_preferences_neutral.radio_buttons.required{name: 'submission[meal_preferences]', type: 'radio', value: 'Neutralne'}>/
+        = f.radio_button(:meal_preferences, 'Neutralne', id: 'submission_meal_preferences_neutral')
         Neutralne
     %span.radio
       %label{for: 'submission_meal_preferences_vege'}
-        %input#submission_meal_preferences_vege.radio_buttons.required{name: 'submission[meal_preferences]', type: 'radio', value: 'Wege'}>/
+        = f.radio_button(:meal_preferences, 'Wege', id: 'submission_meal_preferences_vege')
         Wege
     %span.radio
       %label{for: 'submission_meal_preferences_vegan'}
-        %input#submission_meal_preferences_vegan.radio_buttons.required{name: 'submission[meal_preferences]', type: 'radio', value: 'Wegan'}>/
+        = f.radio_button(:meal_preferences, 'Wegan', id: 'submission_meal_preferences_vegan')
         Wegan
     %span.radio
       %label{for: 'submission_meal_preferences_gluten_free'}
-        %input#submission_meal_preferences_gluten_free.radio_buttons.required{name: 'submission[meal_preferences]', type: 'radio', value: 'Dieta bezglutenowa'}>/
+        = f.radio_button(:meal_preferences, 'Dieta bezglutenowa', id: 'submission_meal_preferences_gluten_free')
         Dieta bezglutenowa
     %span.radio
       %label{for: 'submission_meal_preferences_other'}
-        %input#submission_meal_preferences_other.radio_buttons.required{name: 'submission[meal_preferences]', type: 'radio', value: 'Inne'}>/
+        = f.radio_button(:meal_preferences, 'Inne', id: 'submission_meal_preferences_other')
         Inne
         %input{name: 'submission[custom_meal_preferences]', type: 'text'}
     = f.error :meal_preferences
