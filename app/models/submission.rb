@@ -106,8 +106,7 @@ class Submission
   end
 
   def update_average_rate
-    self.average_rate = calculate_average_rate
-    self.save
+    update_attribute(:average_rate, calculate_average_rate)
   end
 
   private
