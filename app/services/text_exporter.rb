@@ -10,7 +10,7 @@ class TextExporter
     CSV.generate(options.merge(col_sep: "\t")) do |csv|
       csv << fields
       collection.each do |item|
-        csv << item.attributes.values_at(*fields)
+        csv << item.attributes.values_at(*fields).map { |value| "#{value}".gsub(/\s+/, ' ') }
       end
     end
   end
