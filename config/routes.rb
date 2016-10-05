@@ -25,6 +25,7 @@ Oceny::Application.routes.draw do
   delete '/logout' => 'sessions#destroy'
 
   get '/status' => 'status#check'
+  get '/submissions' => 'submissions#index'
 
   scope A9n.form_path do
     get '', to: 'forms#show', as: :form

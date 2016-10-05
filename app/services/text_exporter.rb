@@ -14,4 +14,8 @@ class TextExporter
       end
     end
   end
+
+  def self.to_csv(collection, fields)
+    new(collection, fields).generate
+  end
 end
